@@ -36,3 +36,28 @@ spec:
 save the file in kubernetes folder with name nginx-deployment.yaml 
 open powershell 
 kubectl apply -f nginx-deployment.yaml 
+
+
+DOCKER 
+create folder
+text document
+notepad
+print() name it as hello.py
+note pad 
+FROM python:3.13-slim
+WORKDIR /app
+COPY hello.py /app
+CMD ["python", "hello.py"] save as dockerfile
+cmd open 
+rename dockerfile.txt dockerfile
+
+cmd open
+docker build -t python313-tt
+docker run
+docker login
+docker tag varshad900/python313-tt
+docker push varshad900/python313-tt
+docker run python313-tt
+
+
+
