@@ -1,1 +1,38 @@
+JENKINS
+step - 1:
+docker pull jenkins/jenkins:lts
+step-2:
+docker run -d -p 8080:8080 -p 50000:50000 --name jenkins -v 
+jenkins_home:/var/jenkins_home -v //var/run/docker.sock:/var/run/docker.sock 
+jenkins/jenkins:lts 
+step-3:
+open local host type password
+new item , pipeline , create build
 
+KUBERNETES
+
+kubectl version --client 
+kubectl cluster-info 
+create file in notepad and copy
+apiVersion: apps/v1 
+kind: Deployment 
+metadata: 
+  name: nginx-deployment 
+spec: 
+  replicas: 2 
+  selector: 
+    matchLabels: 
+      app: nginx 
+  template: 
+    metadata: 
+      labels: 
+        app: nginx 
+    spec: 
+      containers: 
+      - name: nginx 
+        image: nginx:1.21 
+        ports: 
+        - containerPort: 80 
+save the file in kubernetes folder with name nginx-deployment.yaml 
+open powershell 
+kubectl apply -f nginx-deployment.yaml 
