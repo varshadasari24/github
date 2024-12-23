@@ -1,0 +1,261 @@
+1.
+Design wireframes for homepage redesign
+
+Write unit tests for new API endpoints
+
+Research deployment strategies for containerized apps
+
+Prepare documentation for the latest release
+
+Create SQL queries for the reporting module
+
+
+2.BUS TICKET BOOKING IN FIGMA TOOL
+
+
+3.e-commerce in apps
+4.Create user registration page
+Develop API for login
+Design homepage layout
+Implement password reset feature
+Set up database schema
+5.
+Requirement	                                Category	            Justification
+Search books by title and author	          Must-Have	   Essential for basic system functionality and user experience.
+Online book reservation system	            Must-Have	   Key feature for improving accessibility and convenience for users.
+Generate monthly reports on borrowed books	Must-Have	   Critical for administrative tasks and decision-making.
+Email notifications for overdue books	      Should-Have	 Enhances user engagement but not critical for basic operations.
+QR code scanning for borrowing/returning	  Should-Have	 Improves efficiency but requires additional resources for implementation.
+User-friendly dashboard for librarians	    Must-Have	   Essential for operational efficiency and ease of use by library staff.
+Review and rate books	                      Could-Have	 Adds value to users but is not critical to the library's core operations.
+Chatbot for user assistance	                Could-Have	 Enhances user experience but is less impactful compared to other functionalities.
+Mobile app version of the system	          Should-Have	 Increases accessibility but requires significant development time.
+Multi-language support	                    Won’t-Have	 Valuable for diverse users but deferred due to resource and time constraints.
+
+
+6.
+Develop book search functionality
+Create user login page
+Implement QR code scanning
+Build monthly report generation
+Enable email notifications for overdue books
+
+7 and 8 in jira did
+9.
+git clone<url>
+cd <url>
+git checkout -b same
+git add .
+git commit - m "commit message describing the changes"
+git push origin same
+
+10.
+git clone<url>
+cd <url>
+git checkout -b same
+git add .
+git commit - m "commit message describing the changes"
+git push origin same
+git checkout main
+git pull origin main
+git checkout same
+
+11.
+docker file
+FROM nginx:latest
+COPY ./index.html /usr/share/nginx/html/index.html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+terminal:
+docker --version
+docker build -t static-website .
+docker run -d -p 8080:80 --name static-website-container static-website
+
+
+12.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.21
+        ports:
+        - containerPort: 80
+
+kubectl apply -f nginx-deployment.yaml
+kubectl get pods
+kubectl expose deployment nginx-deployment --type=NodePort --name=nginx-service
+kubectl get svc
+kubectl scale deployment nginx-deployment --replicas=4
+kubectl get pods
+kubectl get svc
+DELETE:
+kubectl delete svc nginx-service
+kubectl delete deployment nginx-deployment
+JENKINS:
+docker pull jenkins/jenkins:lts
+docker run -d -p 8080:8080 -p 50000:50000 --name jenkins -v 
+jenkins_home:/var/jenkins_home -v //var/run/docker.sock:/var/run/docker.sock 
+jenkins/jenkins:lts
+
+15.IMPLEMENT VERSION CONTROL
+git clone <url>
+cd <url>
+git checkout -b same
+git add .
+git commit -m "Add initial code for module1"
+git push origin same
+git checkout main
+git merge same
+git push origin main
+
+16.
+
+19.APP.PY:
+from flask import Flask
+
+app = Flask(_name_)
+
+@app.route('/')
+def home():
+    return "Hello, CI/CD World!"
+
+if _name_ == "_main_":
+    app.run(host="0.0.0.0", port=5000
+DOCKER FILE:
+Base image
+FROM python:3.9-slim
+
+# Set working directory
+WORKDIR /app
+
+# Copy application files
+COPY . .
+
+# Install dependencies
+RUN pip install flask
+
+# Expose the app's port
+EXPOSE 5000
+
+# Command to run the application
+CMD ["python", "app.py"]
+CI/CD:
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build-test-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Checkout code
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    # Step 2: Set up Docker
+    - name: Set up Docker
+      uses: docker/setup-buildx-action@v2
+
+    # Step 3: Log in to Docker Hub
+    - name: Log in to Docker Hub
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
+    # Step 4: Build and push Docker image
+    - name: Build and Push Docker Image
+      run: |
+        docker build -t ${{ secrets.DOCKER_USERNAME }}/flask-app:latest .
+        docker push ${{ secrets.DOCKER_USERNAME }}/flask-app:latest
+
+    # Step 5: Deploy to Heroku
+    - name: Deploy to Heroku
+      uses: akhileshns/heroku-deploy@v4.1.3
+      with:
+        heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+        heroku_app_name: flask-app-example
+        heroku_email: ${{ secrets.HEROKU_EMAIL }}
+commands in bash:
+CI/CD PIPELINE
+git clone <url>
+cd <url>
+git add .
+git commit -m "initial commit with flask app and docker file"
+git push origin main
+git clone <url>
+45yj
+
+20.GitHub repository for a personal project
+git clone <url>
+cd <url>
+git add .
+
+git commit -m "commit message describing the change"
+git push origin main
+
+21.git clone <url>
+cd <url>
+git add .
+git commit -m "Fixed typo in README"
+git push origin main
+git push origin master
+
+22.
+git clone <url>
+cd <url>
+edit file README.md
+git add .
+git commit -m""
+git push origin main
+
+23.
+git clone<url>
+cd <url>
+git add .
+git commit -m "commit message describing the change"
+cat README.md
+
+24.FEATURE LOGIN:
+git clone <url>
+cd <url>
+git checkout -b feature-login
+login.py:
+def login(username, password):
+    if username == "admin" and password == "password123":
+        return "Login successful"
+    else:
+        return "Invalid credentials"
+git add login.py
+git commit -m "Add simple login function"
+git push origin feature-login
+git checkout main
+git pull origin main
+
+25.FORK REPOSTIORY:
+git clone <url>
+cd <url>
+git remote add upstream <url>
+git fetch upstream
+git checkout main
+git merge upstream/main
+git checkout -b feature-new-functionality
+git add .
+git commit -m "Add new feature: [brief description]"
+git push origin feature-new-functionality
+git pull origin main
